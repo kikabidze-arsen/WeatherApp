@@ -1,0 +1,10 @@
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: var(--bg-footer);
+  border-radius: 10px;
+  transition: background-color 1s ease;
+  color: var(--light-text-color);
+}
+
