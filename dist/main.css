@@ -1,0 +1,644 @@
+/*!****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/variables.css ***!
+  \****************************************************************************/
+:root {
+  --background-color: #a7e2ff;
+  --bg-block: #4089ad;
+  --bg-block-hover: #0e7cb3;
+  --light-text-color: #f9f9f9;
+  --dark-text-color: #3b6680;
+  --bg-input: #e6e6e6;
+  --input-border: #4089ad;
+  --input-text: #010101;
+  --bg-btn: #37a2e9;
+  --bg-btn-hover: #2980b9;
+  --text-feels: #bbb;
+  --scroll-color: #f9f9f9;
+  --bg-footer: #225c7a;
+  --indicate: #e6e6e6;
+  --bg-indicate: #64b5f6;
+  --left-position: 5px;
+  --rotate-angle: 0deg;
+  --background-image: url(e3f7e7a5f6cbbf0ed5da.jpg); 
+}
+
+:root[data-theme="dark"] {
+  --background-color: #100e1c;
+  --bg-block: #062839;
+  --bg-block-hover: #0c638f;
+  --light-text-color: #8d8d8d;
+  --bg-input: #062839;
+  --input-border: #1b87cf;
+  --input-text: #8d8d8d;
+  --bg-btn: #0c4a69;
+  --bg-btn-hover: #09364d;
+  --text-feels: #5d5d5d;
+  --scroll-color: #3b6680;
+  --bg-footer: #011c2a;
+  --bg-indicate: #ec6e4d;
+  --left-position: 35px;
+  --rotate-angle: 360deg;
+  --background-image: url(1bd14b84f539cdb8c7cf.jpg); 
+}
+
+/*!*************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/header.css ***!
+  \*************************************************************************/
+header {
+  display: flex;
+
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 40px;
+  row-gap: 15px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--dark-text-color);
+}
+
+/* Переключение темы */
+.switch-theme {
+  display: flex;
+  justify-content: center;
+}
+
+#themeSwitch {
+  position: absolute;
+  visibility: hidden;
+}
+
+label {
+  position: relative;
+  width: 64px;
+  height: 32px;
+  border: 2px solid var(--bg-indicate);
+  border-radius: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.switch-block {
+  position: absolute;
+  left: var(--left-position);
+  transform: rotate(var(--rotate-angle));
+  transition: all 0.5s ease;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  transition: background-color 1s ease;
+  color: var(--indicate);
+  background-color: var(--bg-indicate);
+  cursor: pointer;
+}
+
+.search-block {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.city-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid var(--input-border);
+  border-radius: 5px;
+  background-color: var(--bg-input);
+  color: var(--input-text);
+  outline: none;
+  transition: background-color 1s ease, border 1s ease;
+}
+
+.city-input:focus,
+.city-input:hover {
+  background-color: var(--bg-input);
+  color: var(--input-text);
+  transition: background-color 1s ease, color 1s ease;
+}
+
+.search-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--bg-btn);
+  color: var(--light-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 1s ease, color 1s ease;
+}
+
+.search-button:hover {
+  background-color: var(--bg-btn-hover);
+  transition: background-color 1s ease;
+}
+
+/* Всплывающее меню */
+.recent-cities {
+  position: absolute;
+  top: 45px;
+  text-align: left;
+  display: none;
+  background-color: var(--background-color);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  color: var(--light-text-color);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 1s ease, color 1s ease, border 1s ease;
+}
+
+.recent-cities li {
+  padding: 5px;
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: var(--bg-block);
+  transition: background-color 1s ease;
+}
+
+.recent-cities li:hover {
+  background-color: var(--bg-block-hover);
+  transition: background-color 1s ease;
+}
+
+/*!**************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/current.css ***!
+  \**************************************************************************/
+/* Текущая погода */
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  background-color: var(--bg-block);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--light-text-color);
+  transition: background-color 1s ease;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+@media (width < 400px) {
+  .weather-info {
+    flex-direction: column;
+  }
+}
+
+.weather-icon img {
+  width: 100px;
+  height: 100px;
+}
+
+.weather-details .city {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.weather-details .temperature {
+  font-size: 3rem;
+  margin: 10px 0;
+}
+
+.weather-details .feels {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: var(--text-feels);
+}
+
+.weather-details .description {
+  font-size: 1.2rem;
+}
+
+/* Дополнительные параметры погоды */
+.weather-stats {
+  display: grid;
+  gap: 15px;
+  text-align: center;
+}
+
+.weather-stats {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (width > 425px) {
+  .weather-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width > 768px) {
+  .weather-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  background-color: var(--background-color);
+  padding: 10px;
+  border-radius: 8px;
+  min-height: 135px;
+  box-shadow: 0 0 3px 3px rgba(0, 191, 255, 0.8);
+  font-size: 0.8rem;
+  transition: background-color 1s ease;
+}
+
+.stat-item:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.stat-item .humidity {
+  display: flex;
+  flex-direction: column;
+
+  color: #3b6680;
+  width: 100%;
+}
+
+.stat-item .humidity-points {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.stat-item .scale {
+  border: 1px solid #3b6680;
+  border-radius: 6px;
+  height: 8px;
+  width: 100%;
+}
+
+.stat-item .parameter {
+  border-radius: 6px;
+  background-color: #3b6680;
+  height: 6px;
+  width: 60%;
+}
+
+.stat-item img {
+  width: 48px;
+  height: 48px;
+}
+
+.stat-item .wind {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.stat-item .direction {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3b6680;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #3b6680;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3b6680;
+}
+
+/* Стили для блока восхода и заката */
+.sunrise-sunset {
+  min-height: 135px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+  margin-top: 15px;
+  padding: 15px;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 0 3px 3px rgba(0, 191, 255, 0.8);
+  transition: background-color 1s ease;
+}
+
+.sun-info {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.day-parameters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sun-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #3b6680;
+}
+
+.sun-time {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3b6680;
+}
+
+.sun-graphic {
+  width: 100%;
+  max-width: 160px;
+  margin: 10px 0;
+}
+
+/* Стили для SVG */
+.sun-graphic svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.day-length {
+  font-size: 0.75rem;
+  color: #3b6680;
+  width: 200px;
+}
+
+@media (width > 465px) {
+  .sunrise-sunset {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .sun-info {
+    margin-bottom: 0;
+  }
+
+  .sun-graphic {
+    margin: 0 20px;
+  }
+
+  .day-length {
+    font-size: 0.9rem;
+  }
+}
+
+/*!*************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/hourly.css ***!
+  \*************************************************************************/
+/* Стили для блока почасового прогноза */
+.hourly-forecast {
+    padding: 15px;
+    background-color: var(--bg-block);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hourly-forecast h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--light-text-color);
+  }
+  
+  .hourly-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px 10px 15px;
+  }
+  
+  .hourly-item {
+    flex: 0 0 auto;
+    text-align: center;
+    background-color: var(--background-color);
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 80px;
+    box-shadow: 0 0 3px 3px rgba(0, 191, 255, 0.8);
+    transition: background-color 1s ease;
+  }
+  
+  .hourly-item img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .hourly-item .hour {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .hourly-item .temp {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3b6680;
+    margin: 5px 0;
+  }
+  
+  /* Скрыть стандартный скроллбар */
+  .hourly-scroll::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .hourly-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--background-color);
+    border-radius: 4px;
+    transition: background-color 1s ease;
+  }
+  
+  .hourly-scroll::-webkit-scrollbar-track {
+    background-color: var(--scroll-color);
+    border-radius: 4px;
+    transition: background-color 1s ease;
+  }
+  
+  
+/*!************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/daily.css ***!
+  \************************************************************************/
+/* Прогноз на 5 дней */
+.forecast {
+  background-color: var(--bg-block);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.forecast h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--light-text-color);
+}
+
+.forecast-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 8px;
+  text-align: center;
+  background-color: var(--background-color);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 3px rgba(0, 191, 255, 0.8);
+  transition: background-color 1s ease;
+}
+
+.forecast-item img {
+  width: 80px;
+  height: 80px;
+}
+
+.forecast-item .temp {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.temp-day {
+  color: var(--dark-text-color);
+}
+
+.temp-night {
+  color: #737373;
+}
+
+/*!************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/toTop.css ***!
+  \************************************************************************/
+#toTop {
+  position: fixed;
+  right: 30px;
+  bottom: 34px;
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  background-color: var(--bg-block);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  transition: background-color 1s ease;
+}
+
+#toTop img {
+  width: 100%;
+}
+
+/*!*************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/footer.css ***!
+  \*************************************************************************/
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: var(--bg-footer);
+  border-radius: 10px;
+  transition: background-color 1s ease;
+  color: var(--light-text-color);
+}
+
+
+/*!***********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/main.css ***!
+  \***********************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+
+  margin: 0;
+  padding: 0;
+  color: #3b6680;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: all 1s ease;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--background-color);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  transition: background-color 1s ease;
+}
+
+/* Дополнительные стили*/
+#error-message {
+  color: red;
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 3px #ffa500);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px #ffa500);
+  }
+}
+
+.sun-disk {
+  animation: glow 2s infinite;
+}
+
+
+/*# sourceMappingURL=main.css.map*/
